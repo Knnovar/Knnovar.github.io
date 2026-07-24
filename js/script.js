@@ -22,6 +22,16 @@ function copiarEmail(event) {
     });
 }
 
+let larguraAtual = window.innerWidth;
+    window.addEventListener('resize', function() {
+        if (window.innerWidth !== larguraAtual) {
+            larguraAtual = window.innerWidth;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            iniciar();
+        }
+    });
+
 // O código do Canvas entra aqui, esperando o HTML carregar primeiro
 document.addEventListener('DOMContentLoaded', function() {
     

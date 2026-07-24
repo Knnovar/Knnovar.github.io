@@ -98,21 +98,24 @@
         }
 
         .links {
-            margin-top: 25px;
-        }
+        margin-top: 25px;
+        display: flex;
+        -wrap: wrap; /* Permite que os botões caiam para a linha de baixo se faltar espaço */
+        gap: 12px; /* Mantém um respiro seguro entre eles */
+        justify-content: flex-start; /* Alinha à esquerda no desktop */
+                }
 
         .links a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            padding: 10px 25px;
-            background: var(--purple-mid);
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            display: inline-block;
-            font-weight: 500;
-            border: 1px solid transparent;
-        }
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 25px;
+        background: var(--purple-mid);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        border: 1px solid transparent;
+        /* Removemos a margin: 0 10px que estava aqui antes, pois o 'gap' já resolve */
+                        }
 
         .links a:hover {
             background: var(--violet-light);
@@ -296,7 +299,7 @@
         color: #fff !important;
         background: var(--violet-light) !important; /* Terracota/Vinho */
         border-color: var(--violet-light) !important;
-        margin-top: 15px; /* Um espaço extra para separar dos outros links */
+        margin-top: 0px; /* Um espaço extra para separar dos outros links */
     }
 
     .btn-download:hover {
@@ -350,16 +353,71 @@
 
     /* Ajuste para telas de celular */
         @media (max-width: 768px) {
-            .hero::before {
-                background: linear-gradient(180deg, var(--bg-color) 45%, var(--purple-mid) 80%, var(--violet-light) 100%);
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            .hero-content {
-                flex-direction: column-reverse; /* Foto em cima, texto embaixo no celular */
-                text-align: center;
-        }}
+    /* Ajusta o fundo para o celular */
+    .hero::before {
+        background: linear-gradient(180deg, var(--bg-color) 45%, var(--purple-mid) 80%, var(--violet-light) 100%);
+    }
+    
+    /* Reorganiza o cabeçalho: Foto em cima, texto centralizado embaixo */
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 20px; /* Reduz a caixa para sobrar mais espaço na tela */
+        gap: 25px;
+    }
+    
+    /* Centraliza os botões no celular */
+    .links {
+        justify-content: center;
+    }
+    
+    /* Reduz levemente a foto para não tomar a tela inteira */
+    .foto-perfil {
+        width: 170px;
+        height: 170px;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+    
+    /* Reduz o excesso de "espaço em branco" entre as áreas do site */
+    section {
+        padding: 45px 20px; 
+    }
+
+    /* Força os cards de projeto a ficarem exatamente em 1 coluna */
+    .grid-projetos {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Deixa o botão "Ver no GitHub" com 100% de largura, perfeito para o clique do polegar */
+    .card a {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-8px);
+        border-color: var(--violet-light);
+        box-shadow: 0 15px 30px rgba(74, 21, 120, 0.2);
+    }
+
+    .skills span:hover {
+        transform: translateY(-5px) scale(1.05);
+        background: #14211a; 
+        border-color: #2b593f; 
+        color: #ffffff;
+        box-shadow: 0 10px 20px rgba(43, 89, 63, 0.4); 
+    }
+    
+    .foto-perfil:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 0 30px rgba(114, 47, 55, 0.8); 
+    }
+}
 
     #malhaDados {
     position: fixed;
