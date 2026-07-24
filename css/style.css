@@ -67,7 +67,22 @@
             align-items: center;
             gap: 40px;
             text-align: left; /* Mudando de centro para a esquerda */
+            animation: flutuarCaixa 6s ease-in-out infinite;
         }
+        @keyframes flutuarCaixa {
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        transform: translateY(-12px); /* Sobe a caixa suavemente */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7); /* A sombra aumenta para dar profundidade */
+    }
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+}
 
         h1 {
             font-size: 2.8rem;
@@ -174,6 +189,20 @@
             margin-bottom: 25px;
         }
 
+        /* Estado inicial dos cards antes de aparecerem na tela */
+        .card-escondido {
+            opacity: 0;
+            transform: translateY(40px); /* Fica 40 pixels mais abaixo */
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Movimento denso e suave */
+            will-change: opacity, transform; /* Boa prática de engenharia: avisa o navegador para otimizar essa renderização */
+        }
+        
+        /* Estado final quando o JavaScript ativar a animação */
+        .card-mostrar {
+            opacity: 1;
+            transform: translateY(0); /* Volta para a posição original */
+        }
+
         .tags {
             list-style: none;
             display: flex;
@@ -251,7 +280,16 @@
         border: 3px solid var(--violet-light); /* Tom de vinho escuro e rústico */
         box-shadow: 0 0 20px rgba(114, 47, 55, 0.4);
         flex-shrink: 0; /* Impede que a foto diminua em telas menores */
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
+
+    /* Efeito ao passar o mouse na foto */
+.foto-perfil:hover {
+    transform: scale(1.05) rotate(2deg); /* Dá um zoom sutil e uma leve inclinada */
+    
+    /* Troque o #722f37 pela cor da borda que você estiver usando, se tiver mudado */
+    box-shadow: 0 0 30px rgba(114, 47, 55, 0.8); 
+}
 
     /* Novo botão de Download com tom de contraste (Terracota/Vinho) */
     .btn-download {
@@ -322,3 +360,14 @@
                 flex-direction: column-reverse; /* Foto em cima, texto embaixo no celular */
                 text-align: center;
         }}
+
+    #malhaDados {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Joga a malha para trás de todo o conteúdo */
+    pointer-events: none; /* Garante que não bloqueie o clique do mouse em botões e links */
+    background-color: var(--bg-color); /* Mantém o fundo super escuro */
+}
