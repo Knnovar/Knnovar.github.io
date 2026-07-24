@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan Moreira - Engenheiro de Dados</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header class="hero">
+    <div class="hero-content">
+        <!-- Lado do Texto e Botões -->
+        <div class="textos-hero">
+            <h1>Renan Moreira da Silva Apolinario</h1>
+            <h2>Engenheiro de Dados</h2>
+            <div class="links">
+                <a href="https://github.com/Knnovar" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/renan-moreira-da-silva-apolinario-6336a2394/" target="_blank">LinkedIn</a>
+                <a href="#" class="btn-email" onclick="copiarEmail(event)">
+                        E-mail
+                 <span class="tooltip-copiado" id="tooltipEmail">E-mail copiado!</span>
+                </a>
+                
+                <!-- Novo Botão de Download -->
+                <br>
+                <a href="./document/CV_Renan - Português.pdf" download class="btn-download">Baixar Currículo</a>
+            </div>
+        </div>
+
+        <!-- Lado da Foto -->
+        <!-- Substitua 'sua-foto.jpg' pelo nome do seu arquivo de imagem -->
+        <img src="./images/sua-foto.jfif" alt="Foto de Renan Moreira" class="foto-perfil">
+    </div>
+</header>
+
+    <section id="sobre">
+        <h2 class="section-title">Sobre Mim</h2>
+        <p>Engenheiro de Dados com mais de 4 anos de experiência consolidada em ambientes regulatórios complexos e de alta criticidade no setor financeiro.</p>
+        <p>Especialista em conduzir modernizações de ponta a ponta, liderando a migração integral de sistemas legados de Basileia de Modelos Estatísticos para o ecossistema Databricks, atuando desde a identificação de origens e ingesta em nuvem até a refatoração de códigos SAS para PySpark, desenho de arquitetura e orquestração.</p>
+        <p>Atuo sob a metodologia ágil Scrum e ferramentas de mercado, com forte foco em práticas de engenharia como CI/CD, TDD, automação, e entregas aderentes às normas vigentes (CMN Nº 4966) para o Banco Central.</p>
+    </section>
+
+    <section id="projetos">
+        <h2 class="section-title">Projetos em Destaque</h2>
+        <div class="grid-projetos">
+            
+            <article class="card">
+                <h3>Pipeline de Dados com Enriquecimento por LLM</h3>
+                <p>Projeto apresentado como um case expositivo para ingesta de dados com documentação gerada por IA, apresentação de um paradigma de Data Contracts com abordagem HITL (Human in the loop) para validação dos dados</p>
+                <ul class="tags">
+                    <li>Python</li>
+                    <li>Gen IA</li>
+                    <li>SLM</li>
+                    <li>Data</li>
+                </ul>
+                <a href="https://github.com/Knnovar/data-masters-nimbus" target="_blank">Ver no GitHub</a>
+            </article>
+
+            <article class="card">
+                <h3>Discord Bot: Moderador de Voz</h3>
+                <p>Aplicação automatizada desenvolvida para servidores no Discord, capaz de detectar voz e oscilações de volume para gerenciar e organizar os participantes em canais de áudio dinamicamente.</p>
+                <ul class="tags">
+                    <li>Python</li>
+                    <li>Bot</li>
+                    <li>Voice API</li>
+                </ul>
+                <a href="https://github.com/Knnovar/bot-anti-grito-discord" target="_blank">Ver no GitHub</a>
+            </article>
+
+            <article class="card">
+                <h3>Detector de Objetos</h3>
+                <p>Projeto pessoal cujo objetivo é desenvolver um script genérico para treinamento de modelos de detecção de objetos com propósitos específicos, sejam eles objetos de fotos, vídeos, jogos ou em tempo real.</p>
+                <ul class="tags">
+                    <li>Python</li>
+                    <li>Machine Learning</li>
+                    <li>YOLO</li>
+                </ul>
+                <a href="https://github.com/Knnovar/detector_objetos_universal" target="_blank">Ver no GitHub</a>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <div class="skills">
+            <span>Databricks</span>
+            <span>PySpark</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Hadoop</span>
+            <span>Control-M</span>
+            <span>Azure</span>
+            <span>Java</span>
+            <span>SAS</span>
+            <span>Gen IA</span>
+            <span>LLM</span>
+            <span>SLM</span>
+            <span>Machine Learning</span>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
+</html>
